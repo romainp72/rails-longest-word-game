@@ -1,0 +1,14 @@
+score page
+
+<h2>Given letters are : <%= @grid %></h2>
+<h2>Your guess is : <%= @try %></h2>
+
+<% def included?(try, grid)
+  try.to_s.all? { |letter| try.count(letter) <= grid.count(letter) }
+end %>
+
+<% if included?(try, grid) %>
+  <%= "Yeepee" %>
+  <% else %>
+  <%= "fail" %>
+<% end %>
